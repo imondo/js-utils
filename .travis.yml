@@ -6,7 +6,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  local_dir: doc
+  local_dir: docs
   github-token: $GITHUB_TOKEN
   target-branch: gh-pages
   keep-history: true
