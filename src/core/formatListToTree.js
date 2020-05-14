@@ -1,14 +1,4 @@
 /**
- * list 数据结构 转换成 树结构
- * @param {Array} data // 需要转换的数据
- * @param {String} id // 节点 id
- * @param {String} pid // 父级节点 id
- * @param {String} child // 子树为节点对象的某个属性值
- * @param {Object} labels // 需要新增的字段名集合 { label: 'category_name' }
- * @return {Array} [ { id: 1, children: [] } ]
- */
-
-/**
 * @description list 数据结构 转换成 树结构
 * @param {Array} data 需要转换的数据
 * @param {String} id 节点 id
@@ -22,10 +12,6 @@
 * =>
 * [ { id: 1, children: [ {id: 3, pid: 1} ] }, { id: 2 } ]
 */
-
-const isObject = obj =>
-  Object.prototype.toString.call(obj) === "[object Object]";
-
 function formatListToTree({
   data = [],
   id = "id",
@@ -36,6 +22,7 @@ function formatListToTree({
   if (!Array.isArray(data)) {
     return [];
   }
+  const isObject = obj => Object.prototype.toString.call(obj) === "[object Object]";
   const arr = [];
   const tmpMap = {};
   const len = data.length;
