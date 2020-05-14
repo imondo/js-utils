@@ -35,7 +35,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/one-pupil/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#deepCloneArr">deepCloneArr</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#generateUUID">generateUUID</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getLetter">getLetter</a></li><li><a href="global.html#insertNewKeys">insertNewKeys</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#randomWord">randomWord</a></li><li><a href="global.html#removeArrEl">removeArrEl</a></li><li><a href="global.html#setRepeatObj">setRepeatObj</a></li><li><a href="global.html#timestampFormat">timestampFormat</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/one-pupil/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#deepCloneArr">deepCloneArr</a></li><li><a href="global.html#formatListToTree">formatListToTree</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#generateUUID">generateUUID</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getLetter">getLetter</a></li><li><a href="global.html#insertNewKeys">insertNewKeys</a></li><li><a href="global.html#randomWord">randomWord</a></li><li><a href="global.html#removeArrEl">removeArrEl</a></li><li><a href="global.html#setRepeatObj">setRepeatObj</a></li><li><a href="global.html#timestampFormat">timestampFormat</a></li></ul>
 </nav>
 
 <div id="main">
@@ -244,6 +244,259 @@
             
 
             <td class="description last">数组</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="formatListToTree"><span class="type-signature"></span>formatListToTree<span class="signature">(data, id, pid, child, labels)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="formatListToTree.js.html">formatListToTree.js</a>, <a href="formatListToTree.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    list 数据结构 转换成 树结构
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>formatListToTree({data: [{id:1}, {id: 2}, {id: 3, pid: 1}]})
+=>
+[ { id: 1, children: [ {id: 3, pid: 1} ] }, { id: 2 } ]</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">需要转换的数据</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">节点 id</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">父级节点 id</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>child</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">子树为节点对象的某个属性值</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labels</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">需要新增的字段名集合 { label: 'category_name' }</td>
         </tr>
 
     
@@ -880,7 +1133,7 @@ formatNumberZero(10) => '10'</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="formatListToTree.js.html">formatListToTree.js</a>, <a href="formatListToTree.js.html#line71">line 71</a>
+        <a href="formatListToTree.js.html">formatListToTree.js</a>, <a href="formatListToTree.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -1019,259 +1272,6 @@ formatNumberZero(10) => '10'</code></pre>
 
 
 
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="isObject"><span class="type-signature"></span>isObject<span class="signature">(data, id, pid, child, labels)</span><span class="type-signature"> &rarr; {Array}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="formatListToTree.js.html">formatListToTree.js</a>, <a href="formatListToTree.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    list 数据结构 转换成 树结构
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>formatListToTree({data: [{id:1}, {id: 2}, {id: 3, pid: 1}]})
-=>
-[ { id: 1, children: [ {id: 3, pid: 1} ] }, { id: 2 } ]</code></pre>
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">需要转换的数据</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">节点 id</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>pid</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">父级节点 id</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>child</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">子树为节点对象的某个属性值</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>labels</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">需要新增的字段名集合 { label: 'category_name' }</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
