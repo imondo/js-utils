@@ -1,0 +1,28 @@
+{
+  "name": "js-utils",
+  "version": "1.0.0",
+  "description": "日常用的 javaScript 函数库",
+  "main": "index.js",
+  "scripts": {
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/one-pupil/js-utils.git"
+  },
+  "keywords": [
+    "js",
+    "utils",
+    "jsdoc"
+  ],
+  "author": "Mondo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/one-pupil/js-utils/issues"
+  },
+  "homepage": "https://github.com/one-pupil/js-utils#readme",
+  "devDependencies": {
+    "docdash": "^1.2.0",
+    "jsdoc": "^3.6.4"
+  }
+}
