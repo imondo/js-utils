@@ -2,6 +2,7 @@
   "source": {
     "include": [
       "src/core",
+      "src/class",
       "./README.md"
     ]
   },
@@ -13,6 +14,7 @@
     "verbose": true
   },
   "templates": {
+    "cleverLinks": true,
     "default": {
       "outputSourceFiles": true,
       "includeDate": false,
@@ -24,6 +26,7 @@
   },
   "docdash": {
     "search": true,
+    "collapse": true,
     "footer": "",
     "meta": {
       "title": "函数工具库",
