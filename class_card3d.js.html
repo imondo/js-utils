@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>class/card3d.js - 函数工具库</title>
+    
+    <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
+    
+        <meta name="keywords" content="javaScript, utils, jsdoc" />
+        <meta name="keyword" content="javaScript, utils, jsdoc" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/one-pupil/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Classes</h3><ul><li><a href="Card3d.html">Card3d</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Card3d.html#arrForch">arrForch</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#block">block</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#init">init</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#initCss">initCss</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#move">move</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageDown">pageDown</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageUp">pageUp</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#sliceGroup">sliceGroup</a></li></ul></li><li><a href="SlideInit.html">SlideInit</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SlideInit.html#getAngle">getAngle</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#getDirection">getDirection</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#init">init</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#deepCloneArr">deepCloneArr</a></li><li><a href="global.html#formatListToTree">formatListToTree</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#generateUUID">generateUUID</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getLetter">getLetter</a></li><li><a href="global.html#insertNewKeys">insertNewKeys</a></li><li><a href="global.html#randomWord">randomWord</a></li><li><a href="global.html#removeArrEl">removeArrEl</a></li><li><a href="global.html#setRepeatObj">setRepeatObj</a></li><li><a href="global.html#sliceGroup">sliceGroup</a></li><li><a href="global.html#timestampFormat">timestampFormat</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">class/card3d.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * 卡片3d动画.
+ * {@link https://imondo.cn/files/3d.html 查看效果}
+ * @param { DOM } el 卡片dom集合
+ * @param { DOM } boxEl 卡片盒子dom
+ */
+
+class Card3d {
+  constructor(el, boxEl) {
+    this.el = el;
+    this.boxEl = boxEl;
+    this.page = 0;
+
+    this.configCss = [
+      { deg: 0, origin: "center" }, // 中
+      { deg: -90, origin: "bottom" }, // 下
+      { deg: 180, origin: "center" }, // 中
+      { deg: 90, origin: "top" } // 上
+    ]
+    this.group = [];
+
+    const boxH = this.boxEl.clientHeight;
+    this.translateZ = boxH / 2;
+    this.boxEl.style.transform = `translateZ(-${this.translateZ}px) rotateX(0deg)`;
+
+    const pageSize = el.length
+    this.pageSize = pageSize;
+    this.maxSize = pageSize - 1;
+    this.init();
+    this.initCss();
+  }
+
+  /**
+   * 初始化事件
+   * 让第一个，第二个卡片显示，以下的隐藏
+   */
+  init() {
+    this.block({
+      index: 1,
+      hideNext: true
+    });
+  }
+
+  /**
+   * 初始化样式
+   * 给每个卡片设置 transform 样式
+   */
+  initCss() {
+    const { el: $els, configCss, translateZ } = this;
+    this.group = this.sliceGroup($els);
+    this.arrForch(this.group, function (item, index) {
+      this.arrForch(item, function (el, i) {
+        const config = configCss[i];
+        const sym = i === 0 ? "" : "-";
+        el.style.transform = `translateZ(${sym}${translateZ}px) rotateX(${config.deg}deg)`
+        el.style.transformOrigin = `${config.origin}`
+        // el.style.backfaceVisibility = 'hidden'
+      })
+    })
+  }
+
+  /**
+   * 分割数组
+   * @param {Array} data  原数组
+   * @param {Number} size  每一个分割的数组长度
+   */
+  sliceGroup(data = [], size = 4) {
+    const result = [];
+    for (let i = 0, len = data.length; i &lt; len; i += size) {
+      result.push(Array.prototype.slice.call(data, i, i + size));
+    }
+    return result;
+  }
+
+  /**
+   * 动画移动
+   * @param {Function} callback 移动后回调函数
+   */
+  move(callback) {
+    this.rotateX = 90 * this.page;
+    const nextPage = this.page + 1;
+    this.block({
+      index: this.page
+    });
+    this.block({
+      index: nextPage,
+      hideNext: true
+    });
+    if (this.page === this.pageSize) return;
+    this.boxEl.style.transform = `translateZ(-${this.translateZ}px) rotateX(${this.rotateX}deg)`
+    callback &amp;&amp; callback(this.el[this.page], this.page);
+  }
+
+  /**
+   * 上滑动
+   * @param {Function} callback 移动后回调函数
+   */
+  pageUp(callback) {
+    if (this.page >= this.maxSize) {
+      return;
+    };
+    this.page++
+    this.move(callback);
+  }
+
+  /**
+   * 下滑动
+   * @param {Function} callback 移动后回调函数
+   */
+  pageDown(callback) {
+    if (this.page &lt;= 0) {
+      return;
+    }
+    this.page--
+    this.move(callback);
+  }
+
+  /**
+   * DOM 元素对象循环
+   * @param {Array} els DOM 元素集合
+   * @param {Function} callback 循环回调
+   */
+  arrForch(els, callback) {
+    const _this = this;
+    Array.prototype.forEach.call(els, function () {
+      callback.call(_this, ...arguments);
+    })
+  }
+
+  /**
+   * 对 DOM 元素设置 display 样式
+   * @param {Number} index 元素个数下标
+   * @param {Boolean} hideNext 是否该元素后面的兄弟元素都 display: none，默认值 true
+   */
+  block({ index, hideNext = false }) {
+    if (hideNext) {
+      this.arrForch(this.el, function (item, i) {
+        this.el[i].style.opacity = index === i ? 1 : i > index ? 0 : 1;
+      })
+    } else {
+      this.el[index].style.opacity = 1;
+    }
+
+  }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

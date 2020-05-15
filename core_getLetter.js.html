@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - 函数工具库</title>
+    <title>core/getLetter.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,36 +40,35 @@
 
 <div id="main">
     
+    <h1 class="page-title">core/getLetter.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+* @description 生成26个字母
+* @return {Number} 26个字母数组
+*
+* @example
+* getLetter() => 'A, B, C ... Z'
+*/
+function getLetter() {
+  let _ch = 'A';
+  let letters = [];
+  for (let i = 0; i &lt; 26; i++) {
+    letters.push(String.fromCharCode(_ch.charCodeAt(0) + i));
+  }
+  return letters;
+}
 
-
-    <section class="package">
-        <h3> </h3>		
+export default getLetter;</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h1>js-utils</h1>
-<p>日常 JavaScript  函数工具库，方便查看</p></article>
-    </section>
-
-
 
 
 

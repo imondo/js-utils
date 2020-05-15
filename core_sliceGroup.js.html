@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - 函数工具库</title>
+    <title>core/sliceGroup.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,36 +40,37 @@
 
 <div id="main">
     
+    <h1 class="page-title">core/sliceGroup.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * 分割数组
+ * @param {Array} data  原数组
+ * @param {Number} size  每一个分割的数组长度
+ * @return {Array} 分割后的数组
+ *
+ * @example
+ * sliceGroup([1,2,3,4,5], 2) => [ [ 1, 2 ], [ 3, 4 ], [ 5 ] ]
+ */
+function sliceGroup(data = [], size) {
+  if (!size) return data;
+  const result = [];
+  for (let i = 0, len = data.length; i &lt; len; i += size) {
+    result.push(Array.prototype.slice.call(data, i, i + size));
+  }
+  return result;
+}
 
-
-    <section class="package">
-        <h3> </h3>		
+export default sliceGroup;</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h1>js-utils</h1>
-<p>日常 JavaScript  函数工具库，方便查看</p></article>
-    </section>
-
-
 
 
 

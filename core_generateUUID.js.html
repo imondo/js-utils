@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - 函数工具库</title>
+    <title>core/generateUUID.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,36 +40,36 @@
 
 <div id="main">
     
+    <h1 class="page-title">core/generateUUID.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+* @description 生成UUID
+* @return {String} 返回字符串
+*
+* @example
+* generateUUID() => '026841df-27db-4ec6-b4e8-6a4c7ee7854f'
+*/
+function generateUUID() {
+  var d = new Date().getTime();
+  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = (d + Math.random() * 16) % 16 | 0;
+    d = Math.floor(d / 16);
+    return (c == 'x' ? r : (r &amp; 0x7 | 0x8)).toString(16);
+  });
+  return uuid;
+}
 
-
-    <section class="package">
-        <h3> </h3>		
+export default generateUUID;</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h1>js-utils</h1>
-<p>日常 JavaScript  函数工具库，方便查看</p></article>
-    </section>
-
-
 
 
 

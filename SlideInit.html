@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>SlideInit - 函数工具库</title>
+    
+    <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
+    
+        <meta name="keywords" content="javaScript, utils, jsdoc" />
+        <meta name="keyword" content="javaScript, utils, jsdoc" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/one-pupil/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Classes</h3><ul><li><a href="Card3d.html">Card3d</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Card3d.html#arrForch">arrForch</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#block">block</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#init">init</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#initCss">initCss</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#move">move</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageDown">pageDown</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageUp">pageUp</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#sliceGroup">sliceGroup</a></li></ul></li><li><a href="SlideInit.html">SlideInit</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SlideInit.html#getAngle">getAngle</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#getDirection">getDirection</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#init">init</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#deepCloneArr">deepCloneArr</a></li><li><a href="global.html#formatListToTree">formatListToTree</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#generateUUID">generateUUID</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getLetter">getLetter</a></li><li><a href="global.html#insertNewKeys">insertNewKeys</a></li><li><a href="global.html#randomWord">randomWord</a></li><li><a href="global.html#removeArrEl">removeArrEl</a></li><li><a href="global.html#setRepeatObj">setRepeatObj</a></li><li><a href="global.html#sliceGroup">sliceGroup</a></li><li><a href="global.html#timestampFormat">timestampFormat</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">SlideInit</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        SlideInit
+        </h2>
+        
+            <div class="class-description usertext">移动端上下左右滑动</div>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="SlideInit"><span class="type-signature"></span>new SlideInit<span class="signature">(options)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="class_slideinit.js.html">class/slideinit.js</a>, <a href="class_slideinit.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>new SlideInit({
+   up() { } // 手指向上滑动
+})</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">滑动事件
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>up</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">向上滑动</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>down</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">向下滑动</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>left</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">向左滑动</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>right</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">向右滑动</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="getAngle"><span class="type-signature"></span>getAngle<span class="signature">(angx, angy)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="class_slideinit.js.html">class/slideinit.js</a>, <a href="class_slideinit.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    获得点击角度
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>angx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>angy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getDirection"><span class="type-signature"></span>getDirection<span class="signature">(startx, starty, endx, endy)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="class_slideinit.js.html">class/slideinit.js</a>, <a href="class_slideinit.js.html#line87">line 87</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    根据起点终点返回方向
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>startx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">点击屏幕开始 x 下标</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>starty</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">点击屏幕开始 y 下标</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">点击屏幕结束 x 下标</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">点击屏幕结束 y 下标</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    1 向上 2 向下 3 向左 4 向右 0 未滑动
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">(options)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="class_slideinit.js.html">class/slideinit.js</a>, <a href="class_slideinit.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    初始化函数
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

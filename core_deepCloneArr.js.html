@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - 函数工具库</title>
+    <title>core/deepCloneArr.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,36 +40,47 @@
 
 <div id="main">
     
+    <h1 class="page-title">core/deepCloneArr.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @description 深拷贝数组
+ * @param {Array} data 数组
+ * @return {Array}
+ *
+ * @example
+ * deepCloneArr([{a: 1}]) => [{a: 1}]
+ */
+function deepCloneArr(data) {
+  let arr = [];
+  for (let i = 0; i &lt; data.length; i++) {
+    if (typeof data[i] !== 'object') {
+      arr.push(data[i]);
+    } else {
+      arr.push(ObjClone(data[i]));
+    }
+  }
+  return arr;
+}
 
+function ObjClone(data) {
+  let obj = {};
+  for (let i in data) {
+    obj[i] = data[i];
+  }
+  return obj;
+}
 
-    <section class="package">
-        <h3> </h3>		
+export default deepCloneArr;</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h1>js-utils</h1>
-<p>日常 JavaScript  函数工具库，方便查看</p></article>
-    </section>
-
-
 
 
 
