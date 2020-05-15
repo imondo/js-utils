@@ -21,9 +21,11 @@
       "useLongnameInNav": false,
       "systemName": "Common Modules",
       "footer": "",
-      "navType": "vertical"
+      "navType": "vertical",
+      "layoutFile": "plugins/layout.tmpl"
     }
   },
+  "plugins": ["plugins/delFooter.js"],
   "docdash": {
     "search": true,
     "collapse": true,
