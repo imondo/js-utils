@@ -35,7 +35,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/one-pupil/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Classes</h3><ul><li><a href="Card3d.html">Card3d</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Card3d.html#arrForch">arrForch</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#block">block</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#init">init</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#initCss">initCss</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#move">move</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageDown">pageDown</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageUp">pageUp</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#sliceGroup">sliceGroup</a></li></ul></li><li><a href="SlideInit.html">SlideInit</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SlideInit.html#getAngle">getAngle</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#getDirection">getDirection</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#init">init</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#deepCloneArr">deepCloneArr</a></li><li><a href="global.html#formatListToTree">formatListToTree</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#generateUUID">generateUUID</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getLetter">getLetter</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#insertNewKeys">insertNewKeys</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#randomWord">randomWord</a></li><li><a href="global.html#removeArrEl">removeArrEl</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#setRepeatObj">setRepeatObj</a></li><li><a href="global.html#sliceGroup">sliceGroup</a></li><li><a href="global.html#timestampFormat">timestampFormat</a></li><li><a href="global.html#toFixed">toFixed</a></li><li><a href="global.html#toUTF8">toUTF8</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/one-pupil/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Classes</h3><ul><li><a href="Card3d.html">Card3d</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Card3d.html#arrForch">arrForch</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#block">block</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#init">init</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#initCss">initCss</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#move">move</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageDown">pageDown</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#pageUp">pageUp</a></li><li data-type='method' style='display: none;'><a href="Card3d.html#sliceGroup">sliceGroup</a></li></ul></li><li><a href="SlideInit.html">SlideInit</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SlideInit.html#getAngle">getAngle</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#getDirection">getDirection</a></li><li data-type='method' style='display: none;'><a href="SlideInit.html#init">init</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#deepCloneArr">deepCloneArr</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatListToTree">formatListToTree</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#generateUUID">generateUUID</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getLetter">getLetter</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#insertNewKeys">insertNewKeys</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#randomWord">randomWord</a></li><li><a href="global.html#removeArrEl">removeArrEl</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#setRepeatObj">setRepeatObj</a></li><li><a href="global.html#sliceGroup">sliceGroup</a></li><li><a href="global.html#timestampFormat">timestampFormat</a></li><li><a href="global.html#toFixed">toFixed</a></li><li><a href="global.html#toUTF8">toUTF8</a></li></ul>
 </nav>
 
 <div id="main">
@@ -277,6 +277,234 @@
     <dd>
         
 <span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="formatCurrency"><span class="type-signature"></span>formatCurrency<span class="signature">(value, currency, decimals)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_formatCurrency.js.html">core/formatCurrency.js</a>, <a href="core_formatCurrency.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    数值货币型转换
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>formatCurrency(12333.514, '$', 2) => $12,333.51</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">金额</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>currency</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">货币符号 默认空</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>decimals</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>2</code>
+                
+                </td>
+            
+
+            <td class="description last">保留位数 默认2位</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    货币型的字符
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
 
 
     </dd>
