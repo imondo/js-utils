@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>core/formatNumberZero.js - 函数工具库</title>
+    <title>core/lotteryRandom.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">core/formatNumberZero.js</h1>
+    <h1 class="page-title">core/lotteryRandom.js</h1>
     
 
     
@@ -50,21 +50,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @description 生成小于 10 的数字前加 0
- * @param {String|Number} n 数字或字符串
- * @return {String}
- *
- * @example
- * formatNumberZero('1') => '01'
- * formatNumberZero(10) => '10'
- */
-function formatNumberZero(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n;
+            <pre class="prettyprint source linenums"><code> /**
+  * 不同步骤的获取概率不同，要按概率去随机生成对应的步骤
+  * @param {Array} list 需要概率性的事物集合
+  * @param {Array} probs 概率数组集合
+  * @return {any} 概率性的事物
+  *
+  * @example
+  * lotteryRandom([1, 2, 3], [0.5, 0.35, 0.15]) => 1
+  */
+ function lotteryRandom(list, probs) {
+  let sum = 0;
+  let factor = 0;
+
+  for (let i = probs.length - 1; i >= 0; i--) {
+    sum += probs[i]; // 统计概率总和
+  }
+
+  const random = Math.random() * sum;  // 生成概率随机数
+
+  for (let i = probs.length - 1; i >= 0; i--) {
+    factor += probs[i];
+    if (random &lt;= factor) {
+      console.log(random, factor);
+      return list[i];
+    }
+    
+  }
+  return null;
 }
 
-export default formatNumberZero;</code></pre>
+export default lotteryRandom;
+</code></pre>
         </article>
     </section>
 
