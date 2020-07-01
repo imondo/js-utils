@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>core/sequenceParam.js - 函数工具库</title>
+    <title>core/isInteger.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">core/sequenceParam.js</h1>
+    <h1 class="page-title">core/isInteger.js</h1>
     
 
     
@@ -51,27 +51,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 序列化对象
- * @param {Object} obj 需要序列化的参数对象
- * @returns {String} 序列化后的字符串
+ * @description 是否为整数
+ * @param {any} number 需要判断的参数
+ * @return {boolean} true | false
+ *
  * @example
- * sequenceParam({a: 1, num: 20}) => "a=1&amp;num=20"  
+ * isInteger(3) => true
+ * isInteger(3.3) => false
+ * isInteger('') => false
+ * isInteger('3') => false
+ * isInteger(true) => false
+ * isInteger([]) => false
  */
 
-function sequenceParam(obj) {
-  let str = '';
-  if (typeof obj !== 'object') {
-    throw new Error('exportParam 过滤器参数要求类型为object');
-  }
-  for (const key in obj) {
-    if (obj[key] !== undefined &amp;&amp; obj[key] !== null) {
-      str += key + '=' + obj[key] + '&amp;';
-    }
-  }
-  return str.substr(0, str.length - 1);
+function isInteger(number) {
+  return Math.floor(number) === number;
 }
 
-export default sequenceParam;</code></pre>
+
+export default isInteger;</code></pre>
         </article>
     </section>
 
