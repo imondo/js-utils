@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>core/timestampFormat.js - 函数工具库</title>
+    <title>core/scrollAnimation.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">core/timestampFormat.js</h1>
+    <h1 class="page-title">core/scrollAnimation.js</h1>
     
 
     
@@ -51,48 +51,31 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
-* @description 时间转换成 刚刚，几分钟前 描述
-* @param {String} dateTimeStamp 时间戳
-* @return {String} 刚刚， 2分钟前
-*
-* @example
-* timestampFormat(new Date().getTime()) => '刚刚'
-*/
-
-function timestampFormat(dateTimeStamp) {
-  const minute = 1000 * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
-  const halfamonth = day * 15;
-  const month = day * 30;
-
-  const now = new Date().getTime();
-  let diffValue = now - dateTimeStamp;
-  const monthC = diffValue / month;
-  const weekC = diffValue / (7 * day);
-  const dayC = diffValue / day;
-  const hourC = diffValue / hour;
-  const minC = diffValue / minute;
-  const _date = new Date(dateTimeStamp);
-  let result = '';
-  if (dayC >= 1) {
-    let year = _date.getFullYear();
-    let month = _date.getMonth() + 1;
-    let day = _date.getDate();
-    result = [year, month, day].map(formatNumber).join('-');
-  } else if (hourC >= 1) {
-    result = parseInt(hourC) + '小时前';
-  } else if (minC > 1) {
-    result = parseInt(minC) + '分钟前';
-  } else {
-    result = '刚刚';
-  }
-  return result;
+ * @description 动画滚动至目标位置
+ * @param {Number} currentY 当前位置
+ * @param {Number} targetY 目标位置
+ * @example  scrollAnimation(0, 100)
+ */
+function scrollAnimation(currentY, targetY) {
+  // 计算需要移动的距离
+  let needScrollTop = targetY - currentY
+  let _currentY = currentY
+  setTimeout(() => {
+    // 一次调用滑动帧数，每次调用会不一样
+    const dist = Math.ceil(needScrollTop / 100)
+    _currentY += dist
+    window.scrollTo(_currentY, currentY)
+    // 如果移动幅度小于十个像素，直接移动，否则递归调用，实现动画效果
+    if (needScrollTop > 100 || needScrollTop &lt; -100) {
+      scrollAnimation(_currentY, targetY)
+    } else {
+      window.scrollTo(_currentY, targetY)
+    }
+  }, 1)
 }
 
-console.log(timestampFormat(new Date().getTime()))
-
-// export default timestampFormat;</code></pre>
+export default scrollAnimation;
+</code></pre>
         </article>
     </section>
 
