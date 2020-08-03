@@ -1,5 +1,5 @@
  /**
-  * 不同步骤的获取概率不同，要按概率去随机生成对应的步骤
+  * @description 不同奖项的获取概率不同
   * @param {Array} list 需要概率性的事物集合
   * @param {Array} probs 概率数组集合
   * @return {any} 概率性的事物
