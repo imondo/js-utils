@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>core/toUTF8.js - 函数工具库</title>
+    <title>core/formatTree.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">core/toUTF8.js</h1>
+    <h1 class="page-title">core/formatTree.js</h1>
     
 
     
@@ -51,33 +51,59 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 中文字符串转成utf8
- * @param {String} str 需要转换的中文字符
- * @returns {String} utf-8字符
- * @example
- * toUTF8("中文") => [ 228, 184, 173, 230, 150, 135 ]  
- */
-function toUTF8(str) {
-	const result = [];
+* @description list 数据结构 转换成 树结构
+* @param {Array} data 需要转换的数据
+* @param {object} options 配置信息
+* @param {String} id 节点 id
+* @param {String} pid 父级节点 id
+* @param {String} children 子树为节点对象的某个属性值
+* @param {String|number} root 指定根节点 value
+* @return {Array}
+*
+* @example
+* formatTree([{id:1, pid: 0}, {id: 2, pid: 0}, {id: 3, pid: 1}])
+* =>
+* [ { id: 1, pid: 0 children: [ {id: 3, pid: 1} ] }, { id: 2, pid: 0 } ]
+*/
+function formatTree(data, options) {
 
-	let k = 0;
-	for (let i = 0; i &lt; str.length; i++) {
-		const j = encodeURI(str[i]);
-		if (j.length === 1) {
-			// 未转换的字符
-			result[k++] = j.charCodeAt(0);
-		} else {
-			// 转换成%XX形式的字符
-			const bytes = j.split('%');
-			for (let l = 1; l &lt; bytes.length; l++) {
-				result[k++] = parseInt('0x' + bytes[l]);
-			}
-		}
-	}
-	return result;
+  if (!Array.isArray(data)) {
+    throw new Error('data is not `Array`')
+  }
+
+  const _options = Object.assign({}, {
+    pid: 'pid',
+    id: 'id',
+    children: 'children',
+    root: 0
+  }, options);
+
+  let parents = data.filter(p => p[_options.pid] === _options.root);
+  let children = data.filter(c => c[_options.pid] !== _options.root);
+
+  dataToTree(parents, children);
+
+  function dataToTree(parents, children) {
+    parents.forEach(p => {
+      children.forEach((c, i) => {
+        if (c[_options.pid] === p[_options.id]) {
+          let _c = JSON.parse(JSON.stringify(children));
+          _c.splice(i, 1);
+          dataToTree([c], _c);
+
+          if (p[_options.children]) {
+            p[_options.children].push(c);
+          } else {
+            p[_options.children] = [c];
+          }
+        }
+      })
+    })
+  }
+  return parents;
 }
 
-export default toUTF8;</code></pre>
+export default formatTree;</code></pre>
         </article>
     </section>
 
