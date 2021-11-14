@@ -31,8 +31,6 @@ function formatListToTree({
     if (val[id]) {
       tmpMap[val[id]] = val;
     }
-  }
-  for (let i = 0; i < len; i++) {
     const item = isObject(labels) ? insertNewKeys(labels, data[i]) : data[i];
     const node = tmpMap[item[pid]];
     if (node) {
