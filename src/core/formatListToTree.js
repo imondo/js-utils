@@ -34,12 +34,8 @@ function formatListToTree({
     const item = isObject(labels) ? insertNewKeys(labels, data[i]) : data[i];
     const node = tmpMap[item[pid]];
     if (node) {
-      if (!node[child]) {
-        node[child] = [];
-        node[child].push(item);
-      } else {
-        node[child].push(item);
-      }
+      node[child] = node[child] || [];
+      node[child].push(item);
     } else {
       arr.push(item);
     }
