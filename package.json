@@ -23,6 +23,6 @@
   "homepage": "https://github.com/one-pupil/js-utils#readme",
   "devDependencies": {
     "docdash": "^1.2.0",
-    "jsdoc": "^3.6.4"
+    "jsdoc": "^3.6.11"
   }
 }
