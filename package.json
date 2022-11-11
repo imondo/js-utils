@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/one-pupil/js-utils.git"
+    "url": "git+https://github.com/imondo/js-utils.git"
   },
   "keywords": [
     "js",
@@ -18,11 +18,12 @@
   "author": "Mondo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/one-pupil/js-utils/issues"
+    "url": "https://github.com/imondo/js-utils/issues"
   },
-  "homepage": "https://github.com/one-pupil/js-utils#readme",
+  "homepage": "https://imondo.github.io/js-utils",
   "devDependencies": {
     "docdash": "^1.2.0",
+    "gh-pages": "^4.0.0",
     "jsdoc": "^3.6.4"
   }
 }
