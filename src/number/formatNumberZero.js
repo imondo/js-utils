@@ -1,4 +1,5 @@
 /**
+ * @module Number/formatNumberZero
  * @description 生成小于 10 的数字前加 0
  * @param {String|Number} n 数字或字符串
  * @return {String}

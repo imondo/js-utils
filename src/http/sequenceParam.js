@@ -1,4 +1,5 @@
 /**
+ * @module Http/sequenceParam
  * @description 序列化对象
  * @param {Object} obj 需要序列化的参数对象
  * @returns {String} 序列化后的字符串

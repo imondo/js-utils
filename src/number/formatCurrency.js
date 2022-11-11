@@ -1,5 +1,6 @@
 /**
- * @description 数值货币型转换
+ * @module Number/formatCurrency
+ * @description 数值货币型转换 formatCurrency
  * @param {String|Number} value  金额
  * @param {String} currency 货币符号 默认空
  * @param {String} decimals  保留位数 默认2位

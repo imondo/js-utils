@@ -1,4 +1,5 @@
 /**
+ * @module Date/getNowDate
  * @description 获取当前日期
  * @param {String} seperator 连接字符 默认 -
  * @returns {String} 当前日期

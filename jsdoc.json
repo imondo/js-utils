@@ -2,7 +2,11 @@
   "source": {
     "include": [
       "src/core",
+      "src/number",
+      "src/tree",
+      "src/date",
       "src/class",
+      "src/regular",
       "./README.md"
     ]
   },
@@ -25,11 +29,23 @@
       "layoutFile": "plugins/layout.tmpl"
     }
   },
-  "plugins": ["plugins/delFooter.js"],
+  "plugins": [
+    "plugins/delFooter.js"
+  ],
   "docdash": {
     "search": true,
     "collapse": true,
     "footer": "",
+    "sectionOrder": [
+        "Classes",
+        "Modules",
+        "Externals",
+        "Events",
+        "Namespaces",
+        "Mixins",
+        "Tutorials",
+        "Interfaces"
+    ],
     "meta": {
       "title": "函数工具库",
       "description": "日常 JavaScript  函数工具库，方便查看",

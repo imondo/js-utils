@@ -1,4 +1,5 @@
 /**
+ * @module Http/getUrlQuery
  * @description 获取 url 参数
  * @param {String} query url query 参数字符串 
  * @return {Object} 参数对象

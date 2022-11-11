@@ -1,4 +1,5 @@
 /**
+ * @module Http/paramToObj
  * @description url 获取查询参数
  * @param {String} url
  * @returns {Object} ? 后的参数对象

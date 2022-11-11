@@ -1,4 +1,5 @@
 /**
+ * @module Number/isInteger
  * @description 是否为整数
  * @param {any} number 需要判断的参数
  * @return {boolean} true | false

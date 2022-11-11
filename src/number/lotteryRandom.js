@@ -1,4 +1,5 @@
  /**
+  * @module Number/lotteryRandom
   * @description 不同奖项的获取概率不同
   * @param {Array} list 需要概率性的事物集合
   * @param {Array} probs 概率数组集合

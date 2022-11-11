@@ -1,4 +1,5 @@
 /**
+* @module Date/getDaysInOneMonth
 * @description 获取某月份的天数
 * @param {String} year
 * @param {String} month

@@ -1,4 +1,5 @@
 /**
+ * @module Date/timestampFormat
 * @description 时间转换成 刚刚，几分钟前 描述
 * @param {String} dateTimeStamp 时间戳
 * @return {String} 刚刚， 2分钟前

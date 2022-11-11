@@ -1,4 +1,5 @@
 /**
+ * @module Number/toFixed
  * @description 对数字保留小数点后几位
  * @param {String|Number} value 需要保留小数点的数值
  * @param {Number} num 保留小数点后几位 默认 2 位

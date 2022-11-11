@@ -1,10 +1,11 @@
 /**
-* @description 获取原生 form 表单数据
-* @param {String} formId form id
-* @return {Object} 返回表单数据
-* @example
-* getFormData('#form') => {name: 'Mondo', site: 'imondo.cn'}
-*/    
+ * @module Date/getFormData
+ * @description 获取原生 form 表单数据
+ * @param {String} formId form id
+ * @return {Object} 返回表单数据
+ * @example
+ * getFormData('#form') => {name: 'Mondo', site: 'imondo.cn'}
+ */
 function getFormData(formId) {
   if (!formId) return
   try {

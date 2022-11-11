@@ -1,4 +1,5 @@
 /**
+ * @module Tree/setRepeatObj
 * @description 将数组重复元素归类组装成树形结构
 * @param {Array} data 需要组装的数据
 * @param {String} repeatKey 重复元素的key 

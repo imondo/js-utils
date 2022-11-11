@@ -1,4 +1,5 @@
 /**
+ * @module Tree/formatListToTree
 * @description list 数据结构 转换成 树结构
 * @param {Array} data 需要转换的数据
 * @param {String} id 节点 id

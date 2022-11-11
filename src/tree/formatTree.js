@@ -1,4 +1,5 @@
 /**
+ * @module Tree/formatTree
 * @description list 数据结构 转换成 树结构
 * @param {Array} data 需要转换的数据
 * @param {object} options 配置信息
