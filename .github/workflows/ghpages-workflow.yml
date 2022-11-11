@@ -1,0 +1,25 @@
+name: Github Pages Deployment
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  deploy:
+    name: deploy GH pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install and build
+        run: npm install && npm run doc
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: docs
