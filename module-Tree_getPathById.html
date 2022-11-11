@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>number/isInteger.js - 函数工具库</title>
+    <title>Tree/getPathById - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,39 +40,233 @@
 
 <div id="main">
     
-    <h1 class="page-title">number/isInteger.js</h1>
+    <h1 class="page-title">Tree/getPathById</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @module Number/isInteger
- * @description 是否为整数
- * @param {any} number 需要判断的参数
- * @return {boolean} true | false
- *
- * @example
- * isInteger(3) => true
- * isInteger(3.3) => false
- * isInteger('') => false
- * isInteger('3') => false
- * isInteger(true) => false
- * isInteger([]) => false
- */
+        
+            
+        
+    
+</header>
 
-function isInteger(number) {
-  return Math.floor(number) === number;
-}
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext">根据子节点 id 获取 节点路径</div>
+            
+
+            
+                
 
 
-export default isInteger;</code></pre>
-        </article>
-    </section>
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tree_getPathById.js.html">tree/getPathById.js</a>, <a href="tree_getPathById.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>getPathById([{"id":"1","child":[{"id":"1_1","child":[{"id":"1_2","child":[{"id":"1_3"}]}]}]}], '1_3')
+=>
+['1_3', '1_2', '1_1', '1']</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">树型结构数据</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">子节点id</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
