@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>date/timestampFormat.js - 函数工具库</title>
+    <title>Number/formatCurrencyUpperCase - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,62 +40,215 @@
 
 <div id="main">
     
-    <h1 class="page-title">date/timestampFormat.js</h1>
+    <h1 class="page-title">Number/formatCurrencyUpperCase</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @module Date/timestampFormat
-* @description 时间转换成 刚刚，几分钟前 描述
-* @param {String} dateTimeStamp 时间戳
-* @return {String} 刚刚， 2分钟前
-*
-* @example
-* timestampFormat(new Date().getTime()) => '刚刚'
-*/
+        
+            
+        
+    
+</header>
 
-function timestampFormat(dateTimeStamp) {
-  const minute = 1000 * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
-  const halfamonth = day * 15;
-  const month = day * 30;
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext">数值转大写货币方式</div>
+            
 
-  const now = new Date().getTime();
-  let diffValue = now - dateTimeStamp;
-  const monthC = diffValue / month;
-  const weekC = diffValue / (7 * day);
-  const dayC = diffValue / day;
-  const hourC = diffValue / hour;
-  const minC = diffValue / minute;
-  const _date = new Date(dateTimeStamp);
-  let result = '';
-  if (dayC >= 1) {
-    let year = _date.getFullYear();
-    let month = _date.getMonth() + 1;
-    let day = _date.getDate();
-    result = [year, month, day].map(formatNumber).join('-');
-  } else if (hourC >= 1) {
-    result = parseInt(hourC) + '小时前';
-  } else if (minC > 1) {
-    result = parseInt(minC) + '分钟前';
-  } else {
-    result = '刚刚';
-  }
-  return result;
-}
+            
+                
 
-console.log(timestampFormat(new Date().getTime()))
 
-// export default timestampFormat;</code></pre>
-        </article>
-    </section>
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="number_formatCurrencyUpperCase.js.html">number/formatCurrencyUpperCase.js</a>, <a href="number_formatCurrencyUpperCase.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>formatCurrencyUpperCase(12333.514) => 壹万贰仟叁佰叁拾叁元伍角壹分</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">金额</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    大写货币字符
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
